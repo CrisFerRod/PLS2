@@ -21,7 +21,7 @@ public class AccesoDatos {
 		getTareasUsuario = c
 				.prepareStatement("select * from tareas where user_id=?");
 		setFechaFinalizacion = c
-				.prepareStatement("update tareas set fechafinalizacion=? where tr_id=?");
+				.prepareStatement("update tareas set fechafinalizacion=? where ta_id=?");
 		String pattern = "yyyy-MM-dd";
 		formatter = new SimpleDateFormat(pattern);
 		st = c.createStatement();
@@ -68,8 +68,8 @@ public class AccesoDatos {
 		return proyectos;
 	}
 
-	public ArrayList<Tarea> getTareasUsuario(int user) throws Exception {
-		getTareasUsuario.setInt(1, user);
+	public ArrayList<Tarea> getTareasUsuario(String user) throws Exception {
+		getTareasUsuario.setString(1, user);
 		ResultSet rs = getTareasUsuario.executeQuery();
 		ArrayList<Tarea> tareas = new ArrayList<Tarea>();
 		while (rs.next()) {
