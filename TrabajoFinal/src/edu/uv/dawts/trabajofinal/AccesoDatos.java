@@ -45,7 +45,7 @@ public class AccesoDatos {
 			t.setNombre(rs.getString(2));
 			t.setProyecto(rs.getInt(3));
 			t.setFechaTope(rs.getDate(4));
-			t.setProgramador(rs.getInt(5));
+			t.setProgramador(rs.getString(5));
 			t.setFechaFinalizacion(rs.getDate(6));
 			tareas.add(t);
 		}
@@ -78,7 +78,7 @@ public class AccesoDatos {
 			t.setNombre(rs.getString(2));
 			t.setProyecto(rs.getInt(3));
 			t.setFechaTope(rs.getDate(4));
-			t.setProgramador(rs.getInt(5));
+			t.setProgramador(rs.getString(5));
 			t.setFechaFinalizacion(rs.getDate(6));
 			tareas.add(t);
 		}
@@ -101,13 +101,13 @@ public class AccesoDatos {
 		creaProyecto.executeUpdate();
 	}
 
-	public void creaTarea(String nombre, int proyecto, int usuario, int year,
+	public void creaTarea(String nombre, int proyecto, String usuario, int year,
 			int mes, int dia) throws Exception {
 		String limite = getDate(year, mes, dia);
 		creaTarea.setString(1, nombre);
 		creaTarea.setInt(2, proyecto);
 		creaTarea.setString(3, limite);
-		creaTarea.setInt(4, usuario);
+		creaTarea.setString(4, usuario);
 
 		creaTarea.executeUpdate();
 	}

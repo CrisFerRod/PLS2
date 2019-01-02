@@ -26,7 +26,7 @@
    <tr> 
       <td>${proyecto.nombre} </td> 
       <td><form action="/TrabajoFinal/jefeproyecto/VerTareas" method="POST">
-              <input type="hidden" name="id_pr" value="${proyecto.id}"/>
+              <input type="hidden" id="id_pr" name="id_pr" value="${proyecto.id}"/>
               <input type="hidden" name="nombre_pr" value="${proyecto.nombre}"/>
               <input type="submit" value="Ver tareas" />
           </form>
